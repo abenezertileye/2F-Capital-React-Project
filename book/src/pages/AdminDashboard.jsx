@@ -38,10 +38,9 @@ const BookTable = ({ data }) => {
           <TableRow>
             <TableCell sx={{color:'#A3A3A3'}}>No</TableCell>
             <TableCell sx={{color:'#A3A3A3'}}>Book No</TableCell>
-            <TableCell sx={{color:'#A3A3A3'}}>Book Name</TableCell>
+            <TableCell sx={{color:'#A3A3A3'}}>Owner</TableCell>
             <TableCell sx={{color:'#A3A3A3'}} >Status</TableCell>
             <TableCell sx={{color:'#A3A3A3'}}>Price</TableCell>
-            <TableCell sx={{color:'#A3A3A3'}}>Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -49,7 +48,7 @@ const BookTable = ({ data }) => {
             <TableRow key={row.no}>
               <TableCell>{row.no}</TableCell>
               <TableCell ><StaticButton text={row.bookNo} sx={{color:'black'}}></StaticButton></TableCell>
-              <TableCell>{row.bookName}</TableCell>
+              <TableCell>{row.owner}</TableCell>
               <TableCell sx={{color:'#A3A3A3'}}>
               <Radio
                   checked={true}
@@ -59,12 +58,7 @@ const BookTable = ({ data }) => {
 
                 {row.status}</TableCell>
               <TableCell sx={{color:'#A3A3A3'}}>{`${row.price} Birr`}</TableCell>
-              <TableCell>
-                <IconButton color="inherit" aria-label="search">
-                    <EditIcon sx={{color:'black', marginRight: 3 }}></EditIcon>
-                    <DeleteIcon sx={{color:'red'}}></DeleteIcon>
-                </IconButton>
-              </TableCell>
+              
             </TableRow>
           ))}
         </TableBody>
@@ -74,7 +68,7 @@ const BookTable = ({ data }) => {
 };
 
 
-function OwnerDashboard() {
+function AdminDashboard() {
 
   return (
     <Box sx={{ display: 'flex', height: '100vh', backgroundColor: '#F0F2FF', height: '100%' }}>
@@ -106,4 +100,4 @@ function OwnerDashboard() {
   );
 }
 
-export default OwnerDashboard;
+export default AdminDashboard;
