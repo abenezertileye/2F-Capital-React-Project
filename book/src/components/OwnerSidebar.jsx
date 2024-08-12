@@ -1,21 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import blueBookLogo from '../assets/blue-book-logo.png';
-import { Drawer, AppBar, Toolbar, List, Typography, Divider, ListItem, ListItemIcon, ListItemText, Box, Avatar } from '@mui/material';
+import { Drawer, AppBar, Toolbar, List, Typography, Divider, ListItem, ListItemIcon, ListItemText, Box, Avatar, Breadcrumbs } from '@mui/material';
 import { Inbox as InboxIcon, Mail as MailIcon, SpaceDashboard as DashboardIcon, Book, AddCircle, Notifications, Settings, AccountCircle, Logout} from '@mui/icons-material';
 
 const drawerWidth = 240;
 
 const buttonHoverStyle = {
-    '&:hover': {
-      backgroundColor: 'rgba(0, 171, 255, 0.1)', 
-      '& .MuiListItemIcon-root': {
-        color: 'rgba(0, 171, 255, 0.7)', 
-      },
+  '&:hover': {
+    backgroundColor: 'rgba(0, 171, 255, 0.1)', 
+    '& .MuiListItemIcon-root': {
+      color: 'rgba(0, 171, 255, 0.7)', 
     },
-  };
+  },
+};
+
+// Function to capitalize the first letter of each word
+const capitalize = (str) => {
+  return str.replace(/\b\w/g, (char) => char.toUpperCase());
+};
 
 function OwnerSidebar() {
+  const location = useLocation();
+
+  // Split the pathname into individual breadcrumb items
+  const pathnames = location.pathname.split('/').filter((x) => x);
+
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar
@@ -34,8 +44,25 @@ function OwnerSidebar() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Owner/ Dashboard
+          <Breadcrumbs aria-label="breadcrumb" sx={{ ml: 2 }}>
+            <Link color="inherit" to="/"style={{ textDecoration: 'none', fontWeight:'700', color:'black', fontSize:'20px' }} >Owner</Link>
+            {pathnames.map((value, index) => {
+              const last = index === pathnames.length - 1;
+              const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+
+              return last ? (
+                <Typography color="textPrimary" key={to}>
+                  {capitalize(value.replace('-', ' '))}
+                </Typography>
+              ) : (
+                <Link color="inherit" to={to} key={to}>
+                  {capitalize(value.replace('-', ' '))}
+                </Link>
+              );
+            })}
+          </Breadcrumbs>
           </Typography>
+          
         </Toolbar>
       </AppBar>
 
