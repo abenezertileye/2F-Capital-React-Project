@@ -23,7 +23,6 @@ const capitalize = (str) => {
 function AdminSidebar() {
   const location = useLocation();
 
-  // Split the pathname into individual breadcrumb items
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   return (

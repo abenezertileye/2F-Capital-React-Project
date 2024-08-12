@@ -58,7 +58,6 @@ const styles = {
   },
 };
 
-// Table component for displaying books
 const BookTable = ({ data }) => {
   const [bookData, setBookData] = useState(data);
 
@@ -124,7 +123,6 @@ const BookTable = ({ data }) => {
   );
 };
 
-// Main AdminTable component
 function AdminBooks() {
   return (
     <Box sx={{ display: 'flex', height: '100vh', backgroundColor: '#F0F2FF' }}>

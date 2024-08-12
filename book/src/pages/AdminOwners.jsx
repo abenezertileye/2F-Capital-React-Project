@@ -60,7 +60,6 @@ const styles = {
   },
 };
 
-// Table component for displaying books
 const BookTable = ({ data }) => {
   const [bookData, setBookData] = useState(data);
   const [openDialog, setOpenDialog] = useState(false);
@@ -143,8 +142,8 @@ const BookTable = ({ data }) => {
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '8px', // Adds space between elements
-                      height: '100%', // Ensures full height for alignment
+                      gap: '8px', 
+                      height: '100%', 
                     }}
                   >
                     <VisibilityIcon onClick={() => handleDialogOpen(row)} style={{ cursor: 'pointer' }} />
@@ -177,7 +176,7 @@ const BookTable = ({ data }) => {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
   <TextField
     label="Name"
-    value={selectedBook?.owner || 'N/A'} // Use 'N/A' or any default value if `selectedBook` is null or undefined
+    value={selectedBook?.owner} 
     variant="outlined"
     disabled
     fullWidth
@@ -187,7 +186,7 @@ const BookTable = ({ data }) => {
   />
   <TextField
     label="Email Address"
-    value="sample@gmail.com" // Use default if email is not available
+    value="sample@gmail.com" 
     variant="outlined"
     disabled
     fullWidth
@@ -197,7 +196,7 @@ const BookTable = ({ data }) => {
   />
   <TextField
     label="Location"
-    value="Addis Ababa" // Use default if location is not available
+    value="Addis Ababa" 
     variant="outlined"
     disabled
     fullWidth
@@ -207,7 +206,7 @@ const BookTable = ({ data }) => {
   />
   <TextField
     label="Phone Number"
-    value="0911223344" // Use default if phone number is not available
+    value="0911223344" 
     variant="outlined"
     disabled
     fullWidth
@@ -225,7 +224,6 @@ const BookTable = ({ data }) => {
   );
 };
 
-// Main AdminBooks component
 function AdminBooks() {
   return (
     <Box sx={{ display: 'flex', height: '100vh', backgroundColor: '#F0F2FF' }}>

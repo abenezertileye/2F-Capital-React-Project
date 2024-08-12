@@ -72,7 +72,6 @@ function LineGraph() {
             fill="url(#blueGradient)"
             strokeWidth={2}
             dot={false}
-            // Ensure Area is rendered behind the Line
             isAnimationActive={false}
           />
           <Line

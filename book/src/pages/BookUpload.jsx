@@ -23,8 +23,8 @@ function BookUpload() {
   };
 
   const handleOpenSecondDialog = () => {
-    setOpenDialog(false); // Close the first dialog
-    setOpenSecondDialog(true); // Open the second dialog
+    setOpenDialog(false); 
+    setOpenSecondDialog(true); 
   };
 
   const handleCloseSecondDialog = () => {
@@ -68,7 +68,7 @@ function BookUpload() {
             <TextField
               label="Rent Price For Two Weeks"
               variant="outlined"
-              sx={{ width: '200px' }} // Adjusted width to 200px for better fit
+              sx={{ width: '200px' }} 
             />
           </Box>
 
@@ -82,7 +82,6 @@ function BookUpload() {
             Submit
           </Button>
 
-          {/* Dialog for adding a new book */}
           <Dialog open={openDialog} onClose={handleCloseDialog}>
             <DialogTitle>Add Book</DialogTitle>
             <DialogContent>
@@ -112,14 +111,13 @@ function BookUpload() {
             <DialogActions sx={{ justifyContent: 'center' }}>
               <Button
                 sx={{ backgroundColor: '#00ABFF', color: 'white', width: '95%', padding: '10px 0', borderRadius: '10px' }}
-                onClick={handleOpenSecondDialog} // Open the second dialog
+                onClick={handleOpenSecondDialog} 
               >
                 Add
               </Button>
             </DialogActions>
           </Dialog>
 
-          {/* Second Dialog */}
           <Dialog open={openSecondDialog} onClose={handleCloseSecondDialog}>
             <SmileFaceIcon></SmileFaceIcon>
             <DialogTitle sx={{textAlign:'center', fontSize:'40px', fontWeight:'700px'}}>Congrates!</DialogTitle>
