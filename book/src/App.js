@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import OwnerDashboard from './pages/OwnerDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminBooks from './pages/AdminBooks';
+import AdminOwners from './pages/AdminOwners';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/owner-dashboard' element={<OwnerDashboard />} />
         <Route path='/admin-dashboard' element={<AdminDashboard/>} />
-        <Route path='/admin-book' element={<AdminBooks/>} />
+        <Route path='/admin-books' element={<AdminBooks/>} />
+        <Route path='/admin-owners' element={<AdminOwners/>} />
       </Routes>
     </Router>
   );

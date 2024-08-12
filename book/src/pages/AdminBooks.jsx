@@ -92,10 +92,11 @@ const BookTable = ({ data }) => {
                 sx={{
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
+                  justifyContent: 'start',
+                  paddingLeft:'0px'
                 }}
               >
-                <Box sx={row.status === 'Rented' ? styles.statusBoxInactive : styles.statusBoxActive}>
+                <Box sx={{paddingLeft:'0px', margin:'0px', ...(row.status === 'Rented' ? styles.statusBoxInactive : styles.statusBoxActive)}}>
                   <DoneIcon />
                   <Typography variant="body2">
                     {row.status === 'Rented' ? 'Inactive' : 'Active'}
