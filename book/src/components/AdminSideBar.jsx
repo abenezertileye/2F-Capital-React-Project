@@ -1,29 +1,9 @@
 import React from 'react';
 import blueBookLogo from '../assets/blue-book-logo.png';
-import {
-  Drawer,
-  AppBar,
-  Toolbar,
-  List,
-  Typography,
-  Divider,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Box,
-  Avatar,
-} from '@mui/material';
-import {
-  SpaceDashboard as DashboardIcon,
-  Book,
-  AddCircle,
-  Notifications,
-  Settings,
-  AccountCircle,
-  Logout,
-} from '@mui/icons-material';
+import { Drawer, AppBar, Toolbar, List, Typography, Divider, ListItem, ListItemIcon, ListItemText, Box, Avatar, Link } from '@mui/material';
+import { Inbox as InboxIcon, Mail as MailIcon, SpaceDashboard as DashboardIcon, Book, AddCircle, Notifications, Settings, AccountCircle, Logout } from '@mui/icons-material';
 import PersonIcon from '@mui/icons-material/Person';
-import { useLocation, Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -37,22 +17,6 @@ const buttonHoverStyle = {
 };
 
 function AdminSidebar() {
-  const location = useLocation();
-
-  // Log the current pathname for debugging
-  console.log('Current location:', location.pathname);
-
-  const getButtonStyle = (path) => ({
-    backgroundColor: location.pathname === path ? '#00ABFF' : 'inherit',
-    '& .MuiListItemText-root': {
-      color: location.pathname === path ? 'white' : 'inherit',
-    },
-    '& .MuiListItemIcon-root': {
-      color: location.pathname === path ? 'white' : 'inherit',
-    },
-    ...buttonHoverStyle,
-  });
-
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar
@@ -66,7 +30,7 @@ function AdminSidebar() {
           borderRadius: '10px',
           backgroundColor: 'white',
           color: 'black',
-          boxShadow: 'none',
+          boxShadow: 'none'
         }}
       >
         <Toolbar>
@@ -87,7 +51,7 @@ function AdminSidebar() {
             flexDirection: 'column',
             justifyContent: 'space-between',
             backgroundColor: '#171B36',
-            color: 'white',
+            color: 'white'
           },
         }}
         variant="permanent"
@@ -95,57 +59,35 @@ function AdminSidebar() {
       >
         <Box>
           <Toolbar>
-            <div className="auth-header">
-              <Avatar src={blueBookLogo}></Avatar>
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ color: 'rgba(0, 171, 255)' }}
-              >
+            <div className='auth-header'>
+              <Avatar src={blueBookLogo} />
+              <Typography variant="h6" noWrap component="div" sx={{ color: 'rgba(0, 171, 255)' }}>
                 Book Rent
               </Typography>
             </div>
           </Toolbar>
-          <Divider
-            sx={{ borderColor: 'rgba(255, 255, 255, 0.5)', width: '80%', mx: 'auto' }}
-          />
+          <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.5)', width: '80%', mx: 'auto' }} />
 
           <List>
-            <ListItem
-              button
-              component={RouterLink}
-              to="/admin-dashboard"
-              sx={getButtonStyle('/admin-dashboard')}
-            >
+            <ListItem button sx={buttonHoverStyle} component={RouterLink} to="/admin-dashboard">
               <ListItemIcon>
-                <DashboardIcon sx={{ color: 'inherit' }} />
+                <DashboardIcon sx={{ color: 'white' }} />
               </ListItemIcon>
               <ListItemText primary="Dashboard" />
             </ListItem>
 
-            <ListItem
-              button
-              component={RouterLink}
-              to="/admin-books"
-              sx={getButtonStyle('/admin-books')}
-            >
+            <ListItem button sx={buttonHoverStyle} component={RouterLink} to="/admin-books">
               <ListItemIcon>
-                <Book sx={{ color: 'inherit' }} />
+                <Book sx={{ color: 'white' }} />
               </ListItemIcon>
-              <ListItemText primary="Book" />
+              <ListItemText primary="Books" />
             </ListItem>
 
-            <ListItem
-              button
-              component={RouterLink}
-              to="/admin-owners"
-              sx={getButtonStyle('/admin-owners')}
-            >
+            <ListItem button sx={buttonHoverStyle} component={RouterLink} to="/admin-owners">
               <ListItemIcon>
-                <PersonIcon sx={{ color: 'inherit' }} />
+                <PersonIcon sx={{ color: 'white' }} />
               </ListItemIcon>
-              <ListItemText primary="Owner" />
+              <ListItemText primary="Owners" />
             </ListItem>
 
             <ListItem button sx={buttonHoverStyle}>
@@ -163,9 +105,7 @@ function AdminSidebar() {
             </ListItem>
           </List>
 
-          <Divider
-            sx={{ borderColor: 'rgba(255, 255, 255, 0.5)', width: '80%', mx: 'auto' }}
-          />
+          <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.5)', width: '80%', mx: 'auto' }} />
 
           <List>
             <ListItem button sx={buttonHoverStyle}>
@@ -190,20 +130,11 @@ function AdminSidebar() {
             </ListItem>
           </List>
 
-          <Divider
-            sx={{ borderColor: 'rgba(255, 255, 255, 0.5)', width: '80%', mx: 'auto' }}
-          />
+          <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.5)', width: '80%', mx: 'auto' }} />
         </Box>
 
         <Box>
-          <List
-            button
-            sx={{
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
-              margin: '0px 15px 25px 15px',
-              borderRadius: '10px',
-            }}
-          >
+          <List button sx={{ backgroundColor: 'rgba(255, 255, 255, 0.2)', margin: '0px 15px 25px 15px', borderRadius: '10px' }}>
             <ListItem button sx={{ height: '40px', padding: '8px 16px' }}>
               <ListItemIcon>
                 <Logout sx={{ color: 'white' }} />

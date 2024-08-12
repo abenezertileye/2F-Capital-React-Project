@@ -2,7 +2,7 @@ import React from 'react';
 import { CssBaseline, Box,IconButton, Card, Divider, Typography } from '@mui/material';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Radio } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import OwnerSidebar from '../components/OwnerSidebar';
+import AdminSidebar from '../components/AdminSideBar';
 import BooksStat from '../components/BooksStat';
 import SummaryCard from '../components/SummaryCard';
 import SummaryTitle from '../components/SummaryTitle';
@@ -80,7 +80,7 @@ function AdminDashboard() {
   return (
     <Box sx={{ display: 'flex', height: '100vh', backgroundColor: '#F0F2FF', height: '100%' }}>
       <CssBaseline />
-      <OwnerSidebar />
+      <AdminSidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Box sx={{ mb: 2, marginTop: '100px', display: 'flex', gap: '20px', height: '100%', paddingBottom: '100px' }}>
 

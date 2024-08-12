@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CssBaseline, Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Switch } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
-import OwnerSidebar from '../components/OwnerSidebar';
+import AdminSidebar from '../components/AdminSideBar';
 import TopBar from '../components/TopBar';
 import { tableData } from '../data/TableData';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
@@ -129,7 +129,7 @@ function AdminBooks() {
   return (
     <Box sx={{ display: 'flex', height: '100vh', backgroundColor: '#F0F2FF' }}>
       <CssBaseline />
-      <OwnerSidebar />
+      <AdminSidebar />
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, flexGrow: 3 }}>
         <Box sx={{ backgroundColor: 'white', borderRadius: '10px', padding: '25px', margin: '100px 20px 0 20px' }}>
           <TopBar />
