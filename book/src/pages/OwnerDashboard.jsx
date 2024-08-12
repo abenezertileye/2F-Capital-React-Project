@@ -11,6 +11,8 @@ import { tableData } from '../data/TableData';
 import LineGraph from '../components/LineGraph';
 import StaticButton from '../components/StaticButton';
 import EditIcon from '@mui/icons-material/Edit';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+
 
 const styles = {
   rented: {

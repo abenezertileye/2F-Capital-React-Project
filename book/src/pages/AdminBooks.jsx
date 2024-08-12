@@ -4,6 +4,7 @@ import DoneIcon from '@mui/icons-material/Done';
 import OwnerSidebar from '../components/OwnerSidebar';
 import TopBar from '../components/TopBar';
 import { tableData } from '../data/TableData';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 // Styles for Switch component
 const styles = {
@@ -77,6 +78,7 @@ const BookTable = ({ data }) => {
             <TableCell sx={{ color: '#A3A3A3' }}>No</TableCell>
             <TableCell sx={{ color: '#A3A3A3' }}>Author</TableCell>
             <TableCell sx={{ color: '#A3A3A3' }}>Owner</TableCell>
+            <TableCell sx={{ color: '#A3A3A3' }}>Catagory</TableCell>
             <TableCell sx={{ color: '#A3A3A3' }}>Book Name</TableCell>
             <TableCell sx={{ color: '#A3A3A3' }}>Status</TableCell>
           </TableRow>
@@ -86,7 +88,13 @@ const BookTable = ({ data }) => {
             <TableRow key={row.no}>
               <TableCell>{row.no}</TableCell>
               <TableCell>{row.author || 'Unknown'}</TableCell>
-              <TableCell>{row.owner}</TableCell>
+              <TableCell>
+                  <Box sx={{display:'flex', gap: 1}}>
+                    <AccountBoxIcon></AccountBoxIcon>
+                    {row.owner || 'Unknown'}
+                  </Box>
+                </TableCell>
+              <TableCell>Fiction</TableCell>
               <TableCell>{row.bookName}</TableCell>
               <TableCell
                 sx={{

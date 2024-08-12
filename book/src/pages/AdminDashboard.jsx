@@ -11,6 +11,8 @@ import { tableData } from '../data/TableData';
 import LineGraph from '../components/LineGraph';
 import StaticButton from '../components/StaticButton';
 import EditIcon from '@mui/icons-material/Edit';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+
 
 const styles = {
   rented: {
@@ -48,7 +50,12 @@ const BookTable = ({ data }) => {
             <TableRow key={row.no}>
               <TableCell>{row.no}</TableCell>
               <TableCell ><StaticButton text={row.bookNo} sx={{color:'black'}}></StaticButton></TableCell>
-              <TableCell>{row.owner}</TableCell>
+              <TableCell>
+                  <Box sx={{display:'flex', gap: 1}}>
+                    <AccountBoxIcon></AccountBoxIcon>
+                    {row.owner || 'Unknown'}
+                  </Box>
+                </TableCell>
               <TableCell sx={{color:'#A3A3A3'}}>
               <Radio
                   checked={true}

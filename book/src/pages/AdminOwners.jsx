@@ -6,6 +6,7 @@ import TopBar from '../components/TopBar';
 import { tableData } from '../data/TableData';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import DeleteIcon from '@mui/icons-material/Delete';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 // Styles for Switch component
 const styles = {
@@ -99,8 +100,8 @@ const BookTable = ({ data }) => {
             <TableRow>
               <TableCell sx={{ color: '#A3A3A3' }}>No</TableCell>
               <TableCell sx={{ color: '#A3A3A3' }}>Author</TableCell>
-              <TableCell sx={{ color: '#A3A3A3' }}>Owner</TableCell>
-              <TableCell sx={{ color: '#A3A3A3' }}>Book Name</TableCell>
+              <TableCell sx={{ color: '#A3A3A3' }}>Upload</TableCell>
+              <TableCell sx={{ color: '#A3A3A3' }}>Location</TableCell>
               <TableCell sx={{ color: '#A3A3A3' }}>Status</TableCell>
               <TableCell sx={{ color: '#A3A3A3' }}>Action</TableCell>
             </TableRow>
@@ -109,9 +110,14 @@ const BookTable = ({ data }) => {
             {bookData.map((row) => (
               <TableRow key={row.no}>
                 <TableCell>{row.no}</TableCell>
-                <TableCell>{row.author || 'Unknown'}</TableCell>
-                <TableCell>{row.owner}</TableCell>
-                <TableCell>{row.bookName}</TableCell>
+                <TableCell>
+                  <Box sx={{display:'flex', gap: 1}}>
+                    <AccountBoxIcon></AccountBoxIcon>
+                    {row.author || 'Unknown'}
+                  </Box>
+                </TableCell>
+                <TableCell sx={{ color: '#A3A3A3' }}>15 Books</TableCell>
+                <TableCell sx={{ color: '#A3A3A3' }}>Addis Ababa</TableCell>
                 <TableCell
                   sx={{
                     display: 'flex',
